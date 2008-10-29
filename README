@@ -1,0 +1,12 @@
+Hartford.rb
+===========
+
+This is the website for the Hartford Ruby Brigade.
+
+Requirements
+===========
+merb-core 0.9.10
+merb-more 0.9.10
+dm-core 0.9.6
+dm-more 0.9.6
+rspec 1.1.11
