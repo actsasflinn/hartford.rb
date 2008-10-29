@@ -3,10 +3,11 @@ Hartford.rb
 
 This is the website for the Hartford Ruby Brigade.
 
-Requirements
+Installation
 ===========
-merb-core 0.9.10
-merb-more 0.9.10
-dm-core 0.9.6
-dm-more 0.9.6
-rspec 1.1.11
+sudo gem install merb-core merb-more dm-core dm-more do_mysql rspec
+git clone git://github.com/actsasflinn/hartford.rb.git
+cd hartford.rb
+cp config/database.yml.example config/database.yml
+rake db:create
+rake sessions:create

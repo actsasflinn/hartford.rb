@@ -1,16 +1,16 @@
 ---
 development: &defaults
-  adapter:  sqlite3
-  database: hartfordrb_dev.db
+  adapter:  mysql
+  database: hartfordrb_dev
   user:     root
  
 test:
   <<:       *defaults
-  database: hartfordrb_test.db
+  database: hartfordrb_test
  
 production:
   <<:       *defaults
-  database: hartfordrb_prod.db
+  database: hartfordrb_prod
  
 rake:
   <<: *defaults
