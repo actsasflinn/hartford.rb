@@ -11,3 +11,4 @@ cd hartford.rb
 cp config/database.yml.example config/database.yml
 rake db:create
 rake sessions:create
+rake db:automigrate
