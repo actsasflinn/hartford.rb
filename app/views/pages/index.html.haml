@@ -1,0 +1,9 @@
+%h1
+  Pages
+%ul
+  - for page in @pages
+    %li
+      =link_to page.title, url(:page, page)
+      =link_to 'Edit', url(:edit_page,  page)
+
+= link_to 'New', url(:new_page)
