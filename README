@@ -12,3 +12,8 @@ cp config/database.yml.example config/database.yml
 rake db:create
 rake sessions:create
 rake db:automigrate
+
+To make a home page
+merb
+open http://0.0.0.0:4000/admin/pages/new
+create a page with a slug = home
