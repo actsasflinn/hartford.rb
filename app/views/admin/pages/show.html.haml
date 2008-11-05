@@ -1,0 +1,9 @@
+%h1
+  = @page.title
+
+%div
+  = @page.body
+
+= link_to 'Edit',  url(:edit_admin_page,  @page)
+|
+= link_to 'Back', url(:admin_pages)

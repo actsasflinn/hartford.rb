@@ -1,0 +1,13 @@
+%h1
+  Edit Page
+
+= error_messages_for :page
+
+= form_for(@page, :action => url(:admin_page, @page)) do
+  = partial "form"
+  %p
+    = submit "Update"
+
+= link_to 'Show', url(:admin_page, @page)
+|
+= link_to 'Back', url(:admin_pages)

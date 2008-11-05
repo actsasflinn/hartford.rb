@@ -2,9 +2,9 @@
 
 = error_messages_for :page
 
-= form_for(@page, :action => url(:pages) ) do
+= form_for(@page, :action => url(:admin_pages) ) do
   = partial "form"
   %p
     = submit "Create"
 
-= link_to 'Back', url(:pages)
+= link_to 'Back', url(:admin_pages)

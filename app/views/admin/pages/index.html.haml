@@ -1,0 +1,10 @@
+%h1
+  Pages
+%ul
+  - for page in @pages
+    %li
+      = link_to page.title, url(:admin_page, page)
+      = link_to 'Edit', url(:edit_admin_page,  page)
+      = link_to 'Destroy', url(:delete_admin_page, page)
+
+= link_to 'New', url(:new_admin_page)
