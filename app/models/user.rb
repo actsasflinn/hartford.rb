@@ -1,17 +1,26 @@
-# This is a default user class used to activate merb-auth.  Feel free to change from a User to 
-# Some other class, or to remove it altogether.  If removed, merb-auth may not work by default.
-#
-# Don't forget that by default the salted_user mixin is used from merb-more
-# You'll need to setup your db as per the salted_user mixin, and you'll need
-# To use :password, and :password_confirmation when creating a user
-#
-# see merb/merb-auth/setup.rb to see how to disable the salted_user mixin
-# 
-# You will need to setup your database and create a user.
 class User
   include DataMapper::Resource
-  
-  property :id,     Serial
-  property :login,  String
-  
+
+  property :id, Serial
+  property :name,         String, :length => 255
+  property :email,        String, :length => 255
+  property :identity_url, String, :length => 255
+  property :admin,        Boolean, :default => false
+
+  validates_is_unique :name, :allow_nil => true  
+  validates_is_unique :email, :allow_nil => :using_openid?
+  validates_format :email, :as => :email_address, :allow_nil => :using_openid?
+  validates_is_unique :identity_url, :allow_nil => :using_password?
+
+  def using_openid?
+    !using_password?
+  end
+
+  def using_password?
+    identity_url.blank?
+  end
+
+  def password_required?
+    !using_openid?
+  end
 end

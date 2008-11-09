@@ -1,0 +1,13 @@
+%p
+  This action requires authentication.  Please sign-in or register using your OpenID.
+
+%fieldset
+  %legend
+    Login
+  = partial 'sessions/login'
+
+%fieldset
+  %legend
+    Register
+
+  = partial 'users/register'

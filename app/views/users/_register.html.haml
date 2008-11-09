@@ -1,0 +1,11 @@
+= error_messages_for :user
+
+= form_for(@user, :action => url(:users)) do
+  %div
+    = text_field :name, :label => "Name:"
+  %div
+    = text_field :email, :label => "Email:"
+  %div
+    = text_field :identity_url, :label => "OpenID:"
+  %p
+    = submit "Register"

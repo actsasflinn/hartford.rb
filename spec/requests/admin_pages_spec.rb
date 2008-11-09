@@ -16,7 +16,18 @@ given "a page exists" do
   request(resource(:admin, :pages), :method => "POST", :params => valid_params)
 end
 
-describe "resource(:admin, :pages)" do
+given "an admin user" do
+  user_params = { :name => 'Admin',
+                  :email => 'admin@jackass.com',
+                  :password => '12345678',
+                  :password_confirmation => '12345678',
+                  :admin => true }
+
+  u = User.create(user_params)
+  session.user = u
+end
+
+describe "resource(:admin, :pages)", :given => "an admin user" do
   describe "GET" do
     
     before(:each) do

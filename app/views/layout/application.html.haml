@@ -12,6 +12,9 @@
           %abbr{ :title => 'Hartford Ruby Brigade' }
             = link_to 'Hartford.rb', '/'
       %div#content.clearfix
+        - message.each_pair do |k,v|
+          %p{ :class => k }
+            = v
         = catch_content :for_layout
       %div#footer.clearfix
         %ul.menu

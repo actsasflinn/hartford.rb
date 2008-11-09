@@ -1,0 +1,10 @@
+%h2 404 Not Found
+
+%p
+  The page you requested couldn't be found.  Check out our
+  = link_to 'homepage', "/"
+  to find what you're looking for.
+
+- if Page.count.zero?
+  %p.no_pages
+    The webmaster hasn't created any pages yet.

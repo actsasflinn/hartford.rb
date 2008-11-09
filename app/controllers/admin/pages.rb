@@ -1,4 +1,4 @@
-class Admin::Pages < Application
+class Admin::Pages < Admin
   # provides :xml, :yaml, :js
 
   def index
