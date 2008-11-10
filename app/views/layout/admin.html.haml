@@ -6,4 +6,7 @@
     %meta{ :content => "text/html; charset=utf-8", "http-equiv" => "content-type" }/
     %link{ :href => "/stylesheets/admin.css", :rel => "stylesheet", :media => "screen", :type => "text/css", :charset => "utf-8" }/
   %body
+    - message.each_pair do |k,v|
+      %p{ :class => k }
+        = v
     = catch_content :for_layout

@@ -5,18 +5,38 @@
       = catch_content(:for_title).blank? ? 'Hartford.rb' : catch_content(:for_title)
     %meta{ :content => "text/html; charset=utf-8", "http-equiv" => "content-type" }/
     %link{ :href => "/stylesheets/screen.css", :rel => "stylesheet", :media => "screen", :type => "text/css", :charset => "utf-8" }/
+    = js_include_tag 'jquery'
+    = js_include_tag 'application'
   %body
     %div#container
-      %div#header
-        %h1
-          %abbr{ :title => 'Hartford Ruby Brigade' }
-            = link_to 'Hartford.rb', '/'
+      %div#header.clearfix
+        %div.container
+          = link_to image_tag('icon.png', :alt => "A Ruby Gemstone"), '/'
+          %h1
+            %abbr{ :title => 'Hartford Ruby Brigade' }
+              = link_to 'Hartford.rb', '/'
       %div#content.clearfix
-        - message.each_pair do |k,v|
-          %p{ :class => k }
-            = v
-        = catch_content :for_layout
-      %div#footer.clearfix
+        %div.container
+          - message.each_pair do |k,v|
+            %p{ :class => k }
+              = v
+          %div#body
+            = catch_content :for_layout
+          %div#sidebar
+            %h3
+              Next Meeting
+
+            %p
+              11/24 @ Geezeo<br />
+              Suite 1314<br />
+              750 Main St, Hartford 
+
+            %h3
+              =link_to 'Twitter', 'http://twitter.com/hartfordrb'
+
+            %ul#tweets
+
+      %div#footer.container.clearfix
         %ul.menu
         %a.cc{ :rel => "license", :href => "http://creativecommons.org/licenses/by/3.0/us/" }
           %img{ :alt => "Creative Commons License", :src => "http://i.creativecommons.org/l/by/3.0/us/88x31.png" }
@@ -26,4 +46,3 @@
         %br
         licensed under a
         %a{ :rel => "license", :href => "http://creativecommons.org/licenses/by/3.0/us/" } Creative Commons Attribution 3.0 License
-
