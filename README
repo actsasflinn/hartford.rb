@@ -5,7 +5,7 @@ This is the website for the Hartford Ruby Brigade.
 
 Installation
 ===========
-sudo gem install merb-core merb-more dm-core dm-more do_mysql rspec
+sudo gem install merb-core merb-more dm-core dm-more do_mysql rspec ruby-openid
 git clone git://github.com/actsasflinn/hartford.rb.git
 cd hartford.rb
 cp config/database.yml.example config/database.yml
